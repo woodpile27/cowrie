@@ -157,6 +157,9 @@ Download a file via FTP
             self.url_log = '{}:{}'.format(self.url_log, self.port)
         self.url_log = '{}/{}'.format(self.url_log, self.remote_path)
 
+        self.exit()
+        return
+
         self.artifactFile = Artifact(self.local_file)
 
         result = self.ftp_download()

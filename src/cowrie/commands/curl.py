@@ -80,6 +80,9 @@ class command_curl(HoneyPotCommand):
         url = url.encode('ascii')
         self.url = url
 
+        self.exit()
+        return
+
         self.artifactFile = Artifact(outfile)
         # HTTPDownloader will close() the file object so need to preserve the name
 

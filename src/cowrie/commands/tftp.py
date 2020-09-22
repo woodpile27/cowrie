@@ -118,8 +118,9 @@ class command_tftp(HoneyPotCommand):
             self.hostname = host
             self.port = int(port)
 
-        self.makeTftpRetrieval()
+        #self.makeTftpRetrieval()
         self.exit()
+        return
 
 
 commands['/usr/bin/tftp'] = command_tftp
