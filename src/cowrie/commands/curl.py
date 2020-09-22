@@ -79,6 +79,9 @@ class command_curl(HoneyPotCommand):
 
         url = url.encode('ascii')
         self.url = url
+        self.protocol.logDispatch(eventid='cowrie.session.file_download',
+                                  format='Downloaded URL (%(url)s)',
+                                  url=self.url)
 
         self.exit()
         return

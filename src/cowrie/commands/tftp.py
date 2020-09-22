@@ -118,6 +118,11 @@ class command_tftp(HoneyPotCommand):
             self.hostname = host
             self.port = int(port)
 
+        url = 'tftp://%s/%s' % (self.hostname, self.file_to_get.strip('/'))
+        self.protocol.logDispatch(eventid='cowrie.session.file_download',
+                                  format='Downloaded URL (%(url)s)',
+                                  url=self.url)
+
         #self.makeTftpRetrieval()
         self.exit()
         return

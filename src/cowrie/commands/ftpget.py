@@ -157,6 +157,10 @@ Download a file via FTP
             self.url_log = '{}:{}'.format(self.url_log, self.port)
         self.url_log = '{}/{}'.format(self.url_log, self.remote_path)
 
+        self.protocol.logDispatch(eventid='cowrie.session.file_download',
+                                  format='Downloaded URL (%(url)s)',
+                                  url=self.url_log)
+
         self.exit()
         return
 

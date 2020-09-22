@@ -115,7 +115,9 @@ class command_wget(HoneyPotCommand):
                 return
 
         self.url = url
-
+        self.protocol.logDispatch(eventid='cowrie.session.file_download',
+                                  format='Downloaded URL (%(url)s)',
+                                  url=self.url)
         self.exit()
         return
 
